@@ -18,52 +18,46 @@
     <style>
         body {
             font-family: 'Outfit', sans-serif;
-            background-color: #070d0a;
-            color: #f3f4f6;
+            background-color: #FFFDF5;
+            color: #1A1A2E;
         }
         .bg-mesh {
             background-image: 
-                radial-gradient(at 0% 0%, rgba(4, 120, 87, 0.15) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(217, 119, 6, 0.12) 0px, transparent 50%);
+                radial-gradient(at 0% 0%, rgba(245, 197, 24, 0.12) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(232, 165, 152, 0.1) 0px, transparent 50%);
         }
         .gold-text-gradient {
-            background: linear-gradient(135deg, #facc15 0%, #d97706 50%, #fef08a 100%);
+            background: linear-gradient(135deg, #d97706 0%, #b45309 50%, #78350f 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .glass-panel {
-            background: rgba(11, 22, 16, 0.65);
+            background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(217, 119, 6, 0.15);
+            border: 1px solid rgba(245, 197, 24, 0.25);
         }
     </style>
 </head>
 <body class="bg-mesh min-h-screen flex items-center justify-center p-6 relative overflow-hidden">
 
     <!-- Ambient glowing orbs -->
-    <div class="absolute w-96 h-96 rounded-full bg-emerald-950/20 blur-[100px] -top-20 -left-20 pointer-events-none"></div>
-    <div class="absolute w-96 h-96 rounded-full bg-amber-950/15 blur-[100px] -bottom-20 -right-20 pointer-events-none"></div>
+    <div class="absolute w-96 h-96 rounded-full bg-amber-200/30 blur-[100px] -top-20 -left-20 pointer-events-none"></div>
+    <div class="absolute w-96 h-96 rounded-full bg-rose-200/20 blur-[100px] -bottom-20 -right-20 pointer-events-none"></div>
 
     <div class="w-full max-w-md glass-panel rounded-3xl p-8 shadow-2xl relative">
         <!-- Brand logo -->
         <div class="flex flex-col items-center text-center mb-8">
-            <div class="flex items-center gap-3 mb-4">
-                <!-- UIN Logo in White Circle -->
-                <div class="w-14 h-14 rounded-full bg-white border border-white flex items-center justify-center p-[3px] shadow-lg overflow-hidden shrink-0">
-                    <img src="/images/logo_uin.png" alt="UIN Logo" class="h-full w-full object-contain" style="image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;">
-                </div>
-                <!-- Department Logo in White Circle -->
-                <div class="w-14 h-14 rounded-full bg-white border border-white flex items-center justify-center p-[3px] shadow-lg overflow-hidden shrink-0">
-                    <img src="/images/logo_department.png" alt="Dept Logo" class="h-full w-full object-contain" style="image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;">
-                </div>
+            <!-- Logo -->
+            <div class="w-20 h-20 flex items-center justify-center mb-4 overflow-hidden shrink-0">
+                <img src="/images/logo_vogma.png" alt="Logo" class="h-full w-full object-contain">
             </div>
-            <h2 class="text-xs uppercase tracking-[0.2em] text-amber-400 font-bold leading-none">ADMINISTRATOR</h2>
-            <h1 class="text-xl md:text-2xl font-serif font-bold text-white mt-2">Prince & Princess English Department</h1>
+            <h2 class="text-xs uppercase tracking-[0.2em] text-amber-700 font-bold leading-none">ADMINISTRATOR</h2>
+            <h1 class="text-xl md:text-2xl font-serif font-bold text-slate-800 mt-2">Prince & Princess English Department</h1>
         </div>
 
         @if($errors->any())
-        <div class="mb-6 p-4 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs leading-relaxed">
+        <div class="mb-6 p-4 rounded-xl bg-rose-50 border border-rose-300 text-rose-700 text-xs leading-relaxed font-semibold">
             <ul class="list-disc pl-4 space-y-1">
                 @foreach($errors->all() as $error)
                 <li>{{ $error }}</li>
@@ -73,7 +67,7 @@
         @endif
 
         @if(session('success'))
-        <div class="mb-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs">
+        <div class="mb-6 p-4 rounded-xl bg-emerald-50 border border-emerald-300 text-emerald-700 text-xs font-semibold">
             {{ session('success') }}
         </div>
         @endif
@@ -82,17 +76,17 @@
             @csrf
             
             <div>
-                <label for="email" class="block text-xs uppercase tracking-wider text-gray-400 font-semibold mb-2">Alamat Email</label>
+                <label for="email" class="block text-xs uppercase tracking-wider text-amber-700 font-bold mb-2">Alamat Email</label>
                 <input type="email" id="email" name="email" value="{{ old('email') }}" required autofocus placeholder="Email Address" 
-                       class="w-full px-4 py-3.5 rounded-xl bg-[#050a08]/40 border border-gray-800 focus:outline-none focus:border-amber-500/50 text-xs md:text-sm text-white">
+                       class="w-full px-4 py-3.5 rounded-xl bg-white border border-amber-500/30 focus:outline-none focus:border-amber-500 text-xs md:text-sm text-slate-700 font-semibold shadow-sm">
             </div>
 
             <div>
-                <label for="password" class="block text-xs uppercase tracking-wider text-gray-400 font-semibold mb-2">Kata Sandi</label>
+                <label for="password" class="block text-xs uppercase tracking-wider text-amber-700 font-bold mb-2">Kata Sandi</label>
                 <div class="relative">
                     <input type="password" id="password" name="password" required placeholder="••••••••" 
-                           class="w-full pl-4 pr-12 py-3.5 rounded-xl bg-[#050a08]/40 border border-gray-800 focus:outline-none focus:border-amber-500/50 text-xs md:text-sm text-white">
-                    <button type="button" onclick="togglePasswordVisibility()" class="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-white focus:outline-none">
+                           class="w-full pl-4 pr-12 py-3.5 rounded-xl bg-white border border-amber-500/30 focus:outline-none focus:border-amber-500 text-xs md:text-sm text-slate-700 font-semibold shadow-sm">
+                    <button type="button" onclick="togglePasswordVisibility()" class="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-slate-700 focus:outline-none">
                         <!-- Eye Icon (Open by default) -->
                         <svg id="eye-icon-open" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -107,14 +101,14 @@
             </div>
 
             <div class="flex items-center justify-between text-xs py-1">
-                <label class="flex items-center gap-2 cursor-pointer text-gray-400 hover:text-white transition-colors">
-                    <input type="checkbox" name="remember" class="rounded bg-[#050a08] border-gray-800 text-amber-500 focus:ring-0">
+                <label class="flex items-center gap-2 cursor-pointer text-slate-600 hover:text-slate-800 transition-colors font-medium">
+                    <input type="checkbox" name="remember" class="rounded bg-white border-amber-300 text-amber-500 focus:ring-0">
                     Ingat Saya
                 </label>
-                <a href="/" class="text-amber-400 hover:text-amber-300 font-semibold">Kembali ke Portal</a>
+                <a href="/" class="text-amber-700 hover:text-amber-600 font-bold">Kembali ke Portal</a>
             </div>
 
-            <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-amber-600 to-yellow-500 text-emerald-950 font-bold tracking-wider hover:shadow-lg transition-all text-xs uppercase mt-8">
+            <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-400 text-slate-900 font-bold tracking-wider hover:shadow-lg hover:shadow-amber-500/20 transition-all text-xs uppercase mt-8">
                 Login
             </button>
         </form>
@@ -140,3 +134,4 @@
 
 </body>
 </html>
+

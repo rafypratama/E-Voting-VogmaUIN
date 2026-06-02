@@ -14,14 +14,14 @@
     <style>
         body {
             font-family: 'Outfit', sans-serif;
-            background-color: #070d0a;
-            color: #f3f4f6;
+            background-color: #FFFDF5;
+            color: #1A1A2E;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100/v;
+            min-height: 100vh;
             height: 100vh;
         }
 
@@ -29,9 +29,9 @@
         .certificate-wrapper {
             width: 900px;
             height: 600px;
-            background-color: #0b1410;
-            border: 15px solid #050a08;
-            box-shadow: 0 0 50px rgba(0,0,0,0.8);
+            background-color: #FFFDF5;
+            border: 15px solid #FFF8EE;
+            box-shadow: 0 10px 40px rgba(180, 83, 9, 0.08);
             position: relative;
             box-sizing: border-box;
             display: flex;
@@ -48,7 +48,7 @@
             inset: 15px;
             border: 3px double #d97706;
             pointer-events: none;
-            opacity: 0.8;
+            opacity: 0.9;
         }
 
         .corner-decoration {
@@ -70,17 +70,18 @@
         }
         .cert-logo {
             font-family: 'Cinzel', serif;
-            font-size: 14px;
+            font-size: 15px;
             letter-spacing: 6px;
-            color: #facc15;
+            color: #b45309;
             margin-bottom: 5px;
             font-weight: 700;
         }
         .cert-sublogo {
             font-size: 10px;
             letter-spacing: 4px;
-            color: #34d399;
+            color: #7c2d12;
             text-transform: uppercase;
+            font-weight: 600;
         }
 
         /* Certificate Title */
@@ -88,24 +89,24 @@
             font-family: 'Cinzel', serif;
             font-size: 26px;
             font-weight: 900;
-            color: #ffffff;
+            color: #78350f;
             letter-spacing: 5px;
             margin: 25px 0 5px 0;
             text-align: center;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-            background: linear-gradient(135deg, #facc15 0%, #d97706 50%, #fef08a 100%);
+            background: linear-gradient(135deg, #b45309 0%, #d97706 50%, #78350f 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             z-index: 10;
         }
 
         .cert-subtitle {
-            font-size: 12px;
+            font-size: 11px;
             letter-spacing: 2px;
-            color: #9ca3af;
+            color: #6b7280;
             text-transform: uppercase;
             margin-bottom: 25px;
             z-index: 10;
+            font-weight: 600;
         }
 
         /* Certificate Content Body */
@@ -115,35 +116,37 @@
             z-index: 10;
         }
         .cert-text {
-            font-size: 13px;
-            color: #9ca3af;
+            font-size: 13.5px;
+            color: #4b5563;
             line-height: 1.6;
             margin-bottom: 10px;
-            font-weight: 300;
+            font-weight: 400;
         }
         .voter-name {
             font-family: 'Cinzel', serif;
-            font-size: 24px;
+            font-size: 25px;
             font-weight: 700;
-            color: #ffffff;
+            color: #1a1a2e;
             margin: 15px 0;
             letter-spacing: 2px;
-            border-bottom: 1px solid rgba(217,119,6,0.3);
+            border-bottom: 2px solid rgba(217, 119, 6, 0.4);
             display: inline-block;
             padding-bottom: 5px;
         }
         .support-details {
-            font-size: 14px;
-            color: #34d399;
-            font-weight: 600;
+            font-size: 13px;
+            color: #7c2d12;
+            font-weight: 700;
             margin-top: 15px;
             letter-spacing: 1px;
         }
         .candidate-name {
-            color: #facc15;
+            color: #b45309;
             font-family: 'Cinzel', serif;
-            font-size: 18px;
-            margin: 5px 0;
+            font-size: 19px;
+            margin: 8px 0;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
 
         /* Certificate Footer */
@@ -163,13 +166,13 @@
         }
         .signature-line {
             width: 100%;
-            border-bottom: 1px solid rgba(156, 163, 175, 0.4);
+            border-bottom: 1.5px solid rgba(180, 83, 9, 0.3);
             margin-bottom: 8px;
         }
         .signature-name {
             font-size: 11px;
-            font-weight: 600;
-            color: #ffffff;
+            font-weight: 700;
+            color: #1a1a2e;
             letter-spacing: 1px;
         }
         .signature-title {
@@ -178,13 +181,14 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-top: 2px;
+            font-weight: 500;
         }
         .fancy-sig {
             font-family: 'Pinyon Script', cursive;
-            font-size: 28px;
-            color: #d97706;
+            font-size: 32px;
+            color: #b45309;
             line-height: 1;
-            margin-bottom: -10px;
+            margin-bottom: -8px;
         }
 
         /* Gold Seal Decoration */
@@ -199,7 +203,7 @@
             height: 70px;
             background: radial-gradient(circle, #fef08a 0%, #facc15 40%, #d97706 100%);
             border-radius: 50%;
-            box-shadow: 0 0 15px rgba(217,119,6,0.3);
+            box-shadow: 0 4px 15px rgba(217,119,6,0.2);
             border: 2px dashed #b45309;
             display: flex;
             align-items: center;
@@ -240,6 +244,7 @@
             color: #6b7280;
             letter-spacing: 2px;
             margin-top: 10px;
+            font-weight: 600;
         }
 
         /* Print Controls Screen Only */
@@ -262,31 +267,33 @@
             border: none;
             cursor: pointer;
             transition: all 0.3s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 10px rgba(180, 83, 9, 0.15);
         }
         .btn-print {
-            background: linear-gradient(135deg, #facc15 0%, #d97706 100%);
-            color: #070d0a;
+            background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+            color: #ffffff;
         }
         .btn-print:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(217,119,6,0.3);
+            box-shadow: 0 6px 15px rgba(217,119,6,0.3);
         }
         .btn-back {
-            background-color: #1f2937;
-            color: #f3f4f6;
-            border: 1px solid rgba(255,255,255,0.05);
+            background-color: #ffffff;
+            color: #4b5563;
+            border: 1px solid rgba(180, 83, 9, 0.2);
         }
         .btn-back:hover {
-            background-color: #374151;
+            background-color: #fffaf5;
             transform: translateY(-2px);
         }
 
         /* Print Styles */
         @media print {
             body {
-                background-color: #ffffff;
-                color: #000000;
+                background-color: #FFFDF5;
+                color: #1A1A2E;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
             }
             .print-controls {
                 display: none;
@@ -295,13 +302,13 @@
                 width: 100% !important;
                 height: 100% !important;
                 border: none !important;
-                background-color: #0b1410 !important;
-                color-adjust: exact;
-                -webkit-print-color-adjust: exact;
+                background-color: #FFFDF5 !important;
                 box-shadow: none !important;
                 position: fixed;
                 left: 0;
                 top: 0;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
             }
         }
     </style>
@@ -325,18 +332,15 @@
 
         <!-- Certificate Header -->
         <div class="cert-header" style="display: flex; align-items: center; justify-content: center; gap: 20px; z-index: 10; margin-bottom: -10px;">
-            <!-- UIN Logo in White Circle -->
-            <div style="width: 72px; height: 72px; border-radius: 50%; background-color: #ffffff; border: 2px solid #ffffff; display: flex; align-items: center; justify-content: center; padding: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.15); overflow: hidden; flex-shrink: 0;">
-                <img src="/images/logo_uin.png" alt="UIN Logo" style="height: 100%; width: 100%; object-fit: contain;">
+            <!-- Logo -->
+            <div style="width: 72px; height: 72px; display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0;">
+                <img src="/images/logo_vogma.png" alt="Logo" style="height: 100%; width: 100%; object-fit: contain;">
             </div>
             <div style="text-align: center;">
                 <div class="cert-logo">PRINCE & PRINCESS</div>
                 <div class="cert-sublogo">ENGLISH DEPARTMENT UIN MADURA 2026</div>
             </div>
-            <!-- Department Logo in White Circle -->
-            <div style="width: 72px; height: 72px; border-radius: 50%; background-color: #ffffff; border: 2px solid #ffffff; display: flex; align-items: center; justify-content: center; padding: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.15); overflow: hidden; flex-shrink: 0;">
-                <img src="/images/logo_department.png" alt="Dept Logo" style="height: 100%; width: 100%; object-fit: contain;">
-            </div>
+
         </div>
 
         <!-- Main Body -->
